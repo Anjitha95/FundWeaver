@@ -102,6 +102,8 @@ namespace FundWeaverApp
         private void genbtn_Click(object sender, EventArgs e)
         {
             MoveSidePanel(genbtn);
+            PaymentUC pu = new PaymentUC();
+            AddControlsToPannel(pu);
         }
 
         private void fundbtn_Click(object sender, EventArgs e)
