@@ -36,7 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.panelside = new System.Windows.Forms.Panel();
-            this.convertbtn = new System.Windows.Forms.Button();
             this.yrbtn = new System.Windows.Forms.Button();
             this.fundbtn = new System.Windows.Forms.Button();
             this.genbtn = new System.Windows.Forms.Button();
@@ -49,16 +48,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.timeLab = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelAbove = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.timerTime = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelControls = new System.Windows.Forms.Panel();
+            this.dragContol1 = new FundWeaverApp.DragContol();
+            this.dragContol2 = new FundWeaverApp.DragContol();
             this.panelLeft.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panelAbove.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +69,6 @@
             this.panelLeft.BackColor = System.Drawing.Color.MediumBlue;
             this.panelLeft.Controls.Add(this.panel1);
             this.panelLeft.Controls.Add(this.panelside);
-            this.panelLeft.Controls.Add(this.convertbtn);
             this.panelLeft.Controls.Add(this.yrbtn);
             this.panelLeft.Controls.Add(this.fundbtn);
             this.panelLeft.Controls.Add(this.genbtn);
@@ -137,23 +137,6 @@
             this.panelside.TabIndex = 3;
             this.panelside.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
-            // convertbtn
-            // 
-            this.convertbtn.FlatAppearance.BorderSize = 0;
-            this.convertbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.convertbtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.convertbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.convertbtn.Image = global::FundWeaverApp.Properties.Resources.icons8_Convertible_32px;
-            this.convertbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.convertbtn.Location = new System.Drawing.Point(22, 585);
-            this.convertbtn.Name = "convertbtn";
-            this.convertbtn.Size = new System.Drawing.Size(205, 62);
-            this.convertbtn.TabIndex = 9;
-            this.convertbtn.Text = "  Conversion To XL";
-            this.convertbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.convertbtn.UseVisualStyleBackColor = true;
-            this.convertbtn.Click += new System.EventHandler(this.convertbtn_Click);
-            // 
             // yrbtn
             // 
             this.yrbtn.FlatAppearance.BorderSize = 0;
@@ -162,7 +145,7 @@
             this.yrbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.yrbtn.Image = ((System.Drawing.Image)(resources.GetObject("yrbtn.Image")));
             this.yrbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.yrbtn.Location = new System.Drawing.Point(22, 490);
+            this.yrbtn.Location = new System.Drawing.Point(22, 546);
             this.yrbtn.Name = "yrbtn";
             this.yrbtn.Size = new System.Drawing.Size(202, 62);
             this.yrbtn.TabIndex = 8;
@@ -179,7 +162,7 @@
             this.fundbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.fundbtn.Image = ((System.Drawing.Image)(resources.GetObject("fundbtn.Image")));
             this.fundbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.fundbtn.Location = new System.Drawing.Point(22, 399);
+            this.fundbtn.Location = new System.Drawing.Point(22, 445);
             this.fundbtn.Name = "fundbtn";
             this.fundbtn.Size = new System.Drawing.Size(202, 62);
             this.fundbtn.TabIndex = 7;
@@ -196,7 +179,7 @@
             this.genbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.genbtn.Image = global::FundWeaverApp.Properties.Resources.icons8_Receipt_32px;
             this.genbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.genbtn.Location = new System.Drawing.Point(22, 322);
+            this.genbtn.Location = new System.Drawing.Point(22, 348);
             this.genbtn.Name = "genbtn";
             this.genbtn.Size = new System.Drawing.Size(211, 62);
             this.genbtn.TabIndex = 6;
@@ -213,7 +196,7 @@
             this.newbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.newbtn.Image = ((System.Drawing.Image)(resources.GetObject("newbtn.Image")));
             this.newbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.newbtn.Location = new System.Drawing.Point(22, 241);
+            this.newbtn.Location = new System.Drawing.Point(22, 253);
             this.newbtn.Name = "newbtn";
             this.newbtn.Size = new System.Drawing.Size(202, 62);
             this.newbtn.TabIndex = 5;
@@ -317,17 +300,17 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // panel2
+            // panelAbove
             // 
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(233, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(876, 51);
-            this.panel2.TabIndex = 12;
+            this.panelAbove.Controls.Add(this.label1);
+            this.panelAbove.Controls.Add(this.button7);
+            this.panelAbove.Controls.Add(this.pictureBox1);
+            this.panelAbove.Controls.Add(this.button8);
+            this.panelAbove.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAbove.Location = new System.Drawing.Point(233, 0);
+            this.panelAbove.Name = "panelAbove";
+            this.panelAbove.Size = new System.Drawing.Size(876, 51);
+            this.panelAbove.TabIndex = 12;
             // 
             // panel3
             // 
@@ -361,6 +344,14 @@
             this.panelControls.Size = new System.Drawing.Size(876, 597);
             this.panelControls.TabIndex = 0;
             // 
+            // dragContol1
+            // 
+            this.dragContol1.SelectControl = this.panelAbove;
+            // 
+            // dragContol2
+            // 
+            this.dragContol2.SelectControl = this.panel1;
+            // 
             // FHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -369,7 +360,7 @@
             this.ClientSize = new System.Drawing.Size(1109, 731);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelAbove);
             this.Controls.Add(this.panelLeft);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -384,8 +375,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelAbove.ResumeLayout(false);
+            this.panelAbove.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -399,7 +390,6 @@
         private System.Windows.Forms.Button homebtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button convertbtn;
         private System.Windows.Forms.Button yrbtn;
         private System.Windows.Forms.Button fundbtn;
         private System.Windows.Forms.Button genbtn;
@@ -412,12 +402,14 @@
         private System.Windows.Forms.Label timeLab;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelAbove;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timerTime;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panelControls;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private DragContol dragContol1;
+        private DragContol dragContol2;
     }
 }

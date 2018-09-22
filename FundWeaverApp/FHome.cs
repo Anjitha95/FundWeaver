@@ -109,17 +109,21 @@ namespace FundWeaverApp
         private void fundbtn_Click(object sender, EventArgs e)
         {
             MoveSidePanel(fundbtn);
+            HistoryUc hu = new HistoryUc();
+            AddControlsToPannel(hu);
         }
 
         private void yrbtn_Click(object sender, EventArgs e)
         {
             MoveSidePanel(yrbtn);
+            reportgenUc ru = new reportgenUc();
+            AddControlsToPannel(ru);
         }
 
-        private void convertbtn_Click(object sender, EventArgs e)
+       /* private void convertbtn_Click(object sender, EventArgs e)
         {
             MoveSidePanel(convertbtn);
-        }
+        }*/
 
         private void timerTime_Tick(object sender, EventArgs e)
         {
