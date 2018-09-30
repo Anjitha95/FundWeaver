@@ -16,7 +16,7 @@ namespace FundWeaverApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FHome());
+            Application.Run(new Login());
         }
     }
 }

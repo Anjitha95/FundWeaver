@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BishopF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BishopF.Designer.cs">
+      <DependentUpon>BishopF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbOperations.cs" />
     <Compile Include="DragContol.cs">
       <SubType>Component</SubType>
     </Compile>

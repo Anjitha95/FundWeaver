@@ -12,6 +12,7 @@ namespace FundWeaverApp.UserControls
 {
     public partial class PaymentUC : UserControl
     {
+        
         public PaymentUC()
         {
             InitializeComponent();
@@ -20,6 +21,14 @@ namespace FundWeaverApp.UserControls
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+            DbOperations db = new DbOperations();
+            string a = "select max(Id) from Fund";
+            pymttextBox.Text = db.maxid(a).ToString();
         }
     }
 }

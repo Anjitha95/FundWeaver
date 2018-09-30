@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FundWeaverApp
 {
     public partial class Login : Form
     {
+        public String utype;
+        
+
         public Login()
         {
             InitializeComponent();
@@ -41,5 +38,29 @@ namespace FundWeaverApp
             this.Dispose();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DbOperations db = new DbOperations();
+            string s = "select *from login where username='" + usrtextBox.Text + "' and password='" + passtextBox.Text + "'";
+            DataTable dt = db.ret(s);
+            if(dt.Rows.Count > 0)
+            {
+                utype = dt.Rows[0][3].ToString().Trim();
+                //MessageBox.Show(utype);
+                if(utype == "FM")                                // authentication according to roles
+                {
+                    this.Hide();
+                    FHome fm = new FHome();
+                    fm.Show();
+                }
+                else
+                {
+                    this.Hide();
+                    BishopF bm = new BishopF();
+                    bm.Show();
+                }
+            }
+            
+        }
     }
 }
