@@ -31,18 +31,36 @@ namespace FundWeaverApp.UserControls
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DbOperations db = new DbOperations();
-            String a = "select max(BId) from Building";
-            String b = db.maxid(a).ToString();
-            btype = comboBox1.Text.ToString();
-            string s = "insert into Building values('" + b + "','" + blnametxt.Text + "','" + dsttxt.Text + "','" + btype + "','" + cnttxt.Text + "','" + plcetxt.Text + "')";
-            db.nonreturn(s);
-            MessageBox.Show("Insertion Successfull...");
-            blnametxt.Text = " ";
-            dsttxt.Text = " ";
-            comboBox1.Text = "--select--";
-            cnttxt.Text = " ";
-            plcetxt.Text = " ";
+            if (comboBox1.Text == "Church" || comboBox1.Text == "Convent")
+            {
+                DbOperations db = new DbOperations();
+                String a = "select max(BId) from Building";
+                String b = db.maxid(a).ToString();
+                btype = comboBox1.Text.ToString();
+                string s = "insert into Building values('" + b + "','" + blnametxt.Text + "','" + dsttxt.Text + "','" + btype + "','" + cnttxt.Text + "','" + plcetxt.Text + "')";
+                db.nonreturn(s);
+                MessageBox.Show("Insertion Successfull...");
+                blnametxt.Text = " ";
+                dsttxt.Text = " ";
+                comboBox1.Text = "--select--";
+                cnttxt.Text = " ";
+                plcetxt.Text = " ";
+            }
+            else
+            {
+                DbOperations db = new DbOperations();
+                String a = "select max(beId) from Beneficiary";
+                String b = db.maxid(a).ToString();
+                btype = comboBox1.Text.ToString();
+                string s = "insert into Beneficiary values('" + b + "','" + blnametxt.Text + "','" + dsttxt.Text + "','" + cnttxt.Text + "','" + plcetxt.Text + "')";
+                db.nonreturn(s);
+                MessageBox.Show("Insertion Successfull...");
+                blnametxt.Text = " ";
+                dsttxt.Text = " ";
+                comboBox1.Text = "--select--";
+                cnttxt.Text = " ";
+                plcetxt.Text = " ";
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
