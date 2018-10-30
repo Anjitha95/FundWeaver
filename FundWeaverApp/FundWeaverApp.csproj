@@ -62,6 +62,12 @@
     <Compile Include="FHome.Designer.cs">
       <DependentUpon>FHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="forgotpass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forgotpass.Designer.cs">
+      <DependentUpon>forgotpass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,8 +106,17 @@
     <Compile Include="UserControls\reportgenUc.Designer.cs">
       <DependentUpon>reportgenUc.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserReg.Designer.cs">
+      <DependentUpon>UserReg.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FHome.resx">
       <DependentUpon>FHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forgotpass.resx">
+      <DependentUpon>forgotpass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -125,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\reportgenUc.resx">
       <DependentUpon>reportgenUc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserReg.resx">
+      <DependentUpon>UserReg.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

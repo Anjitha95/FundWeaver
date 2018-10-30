@@ -42,6 +42,7 @@ namespace FundWeaverApp.UserControls
                 {
                     PytypecomboBox.Items.Add(rd.GetString(rd.GetOrdinal("Ftype")));
                 }
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -66,6 +67,7 @@ namespace FundWeaverApp.UserControls
                     {
                         pymtnamecomboBox1.Items.Add(rd.GetString(rd.GetOrdinal("bldname")));
                     }
+                    con.Close();
                 }
                 catch(Exception ex)
                 {
@@ -112,6 +114,7 @@ namespace FundWeaverApp.UserControls
                     {
                         pymtnamecomboBox1.Items.Add(rd.GetString(rd.GetOrdinal("bname")));
                     }
+                    con.Close();
                 }
                 catch (Exception ex)
                 {
@@ -131,10 +134,7 @@ namespace FundWeaverApp.UserControls
             plctextBox.Text = " ";
             distextBox.Text = " ";
             amttxt.Text = " ";
-            DbOperations db = new DbOperations();
-            string a = "select max(Id) from Fund";
-            string b = db.maxid(a).ToString();
-            pymttextBox.Text = b;
+            
 
         }
 
@@ -160,6 +160,7 @@ namespace FundWeaverApp.UserControls
                         plctextBox.Text = plc;
                         distextBox.Text = dst;
                     }
+                    con.Close();
                 }
                 catch (Exception ex)
                 {
@@ -186,6 +187,7 @@ namespace FundWeaverApp.UserControls
                         plctextBox.Text = plc;
                         distextBox.Text = dst;
                     }
+                    con.Close();
                 }
                 catch (Exception ex)
                 {

@@ -62,5 +62,17 @@ namespace FundWeaverApp
             }
             
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            UserReg ur = new UserReg();
+            ur.Show();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            forgotpass fp = new forgotpass();
+            fp.Show();
+        }
     }
 }
