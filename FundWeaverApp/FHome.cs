@@ -136,6 +136,13 @@ namespace FundWeaverApp
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MoveSidePanel(changebtn);
+            changeUC cu = new changeUC();
+            AddControlsToPannel(cu);
+        }
+
         /* private void FHome_MouseMove(object sender, MouseEventArgs e) // for enabling movement of form
          {
              if (e.Button == MouseButtons.Left)

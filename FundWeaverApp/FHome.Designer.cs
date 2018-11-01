@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHome));
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.changebtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,6 +68,7 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.MediumBlue;
+            this.panelLeft.Controls.Add(this.changebtn);
             this.panelLeft.Controls.Add(this.panel1);
             this.panelLeft.Controls.Add(this.panelside);
             this.panelLeft.Controls.Add(this.yrbtn);
@@ -79,6 +81,23 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(233, 731);
             this.panelLeft.TabIndex = 0;
+            // 
+            // changebtn
+            // 
+            this.changebtn.FlatAppearance.BorderSize = 0;
+            this.changebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.changebtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changebtn.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.changebtn.Image = ((System.Drawing.Image)(resources.GetObject("changebtn.Image")));
+            this.changebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.changebtn.Location = new System.Drawing.Point(25, 611);
+            this.changebtn.Name = "changebtn";
+            this.changebtn.Size = new System.Drawing.Size(202, 62);
+            this.changebtn.TabIndex = 9;
+            this.changebtn.Text = "  Change Password";
+            this.changebtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.changebtn.UseVisualStyleBackColor = true;
+            this.changebtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -145,7 +164,7 @@
             this.yrbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.yrbtn.Image = ((System.Drawing.Image)(resources.GetObject("yrbtn.Image")));
             this.yrbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.yrbtn.Location = new System.Drawing.Point(22, 546);
+            this.yrbtn.Location = new System.Drawing.Point(22, 522);
             this.yrbtn.Name = "yrbtn";
             this.yrbtn.Size = new System.Drawing.Size(202, 62);
             this.yrbtn.TabIndex = 8;
@@ -162,7 +181,7 @@
             this.fundbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.fundbtn.Image = ((System.Drawing.Image)(resources.GetObject("fundbtn.Image")));
             this.fundbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.fundbtn.Location = new System.Drawing.Point(22, 445);
+            this.fundbtn.Location = new System.Drawing.Point(22, 426);
             this.fundbtn.Name = "fundbtn";
             this.fundbtn.Size = new System.Drawing.Size(202, 62);
             this.fundbtn.TabIndex = 7;
@@ -179,7 +198,7 @@
             this.genbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.genbtn.Image = global::FundWeaverApp.Properties.Resources.icons8_Receipt_32px;
             this.genbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.genbtn.Location = new System.Drawing.Point(22, 348);
+            this.genbtn.Location = new System.Drawing.Point(22, 339);
             this.genbtn.Name = "genbtn";
             this.genbtn.Size = new System.Drawing.Size(211, 62);
             this.genbtn.TabIndex = 6;
@@ -411,5 +430,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private DragContol dragContol1;
         private DragContol dragContol2;
+        private System.Windows.Forms.Button changebtn;
     }
 }

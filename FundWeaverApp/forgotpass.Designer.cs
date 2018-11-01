@@ -91,6 +91,7 @@
             this.button3.Size = new System.Drawing.Size(48, 44);
             this.button3.TabIndex = 16;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -146,9 +147,9 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(303, 369);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 19);
+            this.label2.Size = new System.Drawing.Size(52, 19);
             this.label2.TabIndex = 5;
-            this.label2.Text = "emailtxt";
+            this.label2.Text = "Email";
             // 
             // button1
             // 
@@ -160,7 +161,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 44);
             this.button1.TabIndex = 8;
-            this.button1.Text = "RETAIN";
+            this.button1.Text = "RETRIVE";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

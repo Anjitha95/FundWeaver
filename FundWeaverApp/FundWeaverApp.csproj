@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,6 +54,12 @@
     </Compile>
     <Compile Include="BishopF.Designer.cs">
       <DependentUpon>BishopF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="changeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="changeUC.Designer.cs">
+      <DependentUpon>changeUC.cs</DependentUpon>
     </Compile>
     <Compile Include="DbOperations.cs" />
     <Compile Include="DragContol.cs">
@@ -112,6 +121,9 @@
     <Compile Include="UserReg.Designer.cs">
       <DependentUpon>UserReg.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="changeUC.resx">
+      <DependentUpon>changeUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FHome.resx">
       <DependentUpon>FHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +156,7 @@
     <EmbeddedResource Include="UserReg.resx">
       <DependentUpon>UserReg.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

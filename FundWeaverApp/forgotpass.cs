@@ -45,7 +45,7 @@ namespace FundWeaverApp
             {
                 MessageBox.Show(ex.Message);
             }
-            if (!string.IsNullOrEmpty(password))
+            if (!string.IsNullOrEmpty(password))   // sending email to user for password retrival
             {
                 SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
                 MailMessage msg = new MailMessage("anjithad43@gmail.com", mailtextBox.Text.Trim());
@@ -54,8 +54,15 @@ namespace FundWeaverApp
                 sc.Credentials = new NetworkCredential("anjithad43", "muqmapassion4836");
                 sc.EnableSsl = true;
                 sc.Send(msg);
+                MessageBox.Show("Password successfully send to mail...");
+                this.Dispose();
             }
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

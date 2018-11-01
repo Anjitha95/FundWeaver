@@ -23,7 +23,7 @@ namespace FundWeaverApp.UserControls
 
 
         }
-
+       
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -32,7 +32,7 @@ namespace FundWeaverApp.UserControls
             try
             {
                 SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Dell-PC\Documents\Fundweaverdb.mdf;Integrated Security=True;Connect Timeout=30");
-                string z = "select * from Fund ";
+                string z = "select Ftype, count(*) as cnt from Fund group by Ftype having count(*) >= 1";
                 con.Open();
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
