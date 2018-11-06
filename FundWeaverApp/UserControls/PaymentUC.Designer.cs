@@ -172,13 +172,13 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.CustomFormat = "MM-dd-yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(471, 139);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(210, 27);
             this.dateTimePicker1.TabIndex = 19;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 9, 30, 0, 0, 0, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2018, 11, 4, 0, 0, 0, 0);
             // 
             // button2
             // 

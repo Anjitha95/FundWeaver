@@ -13,8 +13,8 @@ namespace FundWeaverApp.UserControls
 {
     public partial class HistoryUc : UserControl
     {
-        private readonly object MultiView1;
-
+         bool dateChanged1 = false;
+         bool dateChanged2 = false;
         public HistoryUc()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace FundWeaverApp.UserControls
                 while (rd.Read())
                 {
                     comboBox1.Items.Add(rd.GetString(rd.GetOrdinal("Ftype")));
-                    comboBox2.Items.Add(rd.GetString(rd.GetOrdinal("Ftype")));
+                    
                 }
                 con.Close();
             }
@@ -40,29 +40,7 @@ namespace FundWeaverApp.UserControls
             }
            
             
-            //try            name of all
-            //{
-            //    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Dell-PC\Documents\Fundweaverdb.mdf;Integrated Security=True;Connect Timeout=30");
-            //    string a = "select bldname from building UNION select bname from Beneficiary";
-            //    string a = "select * from building, Beneficiary ";
-            //    con.Open();
-            //    SqlCommand cmd = new SqlCommand();
-            //    cmd.Connection = con;
-            //    cmd.CommandText = a;
-            //    SqlDataReader rd = cmd.ExecuteReader();
-            //    while (rd.Read())
-            //    {
-            //        comboBox3.Items.Add(rd.GetString(rd.GetOrdinal("bldname")));
-            //        comboBox3.Items.Add(rd.GetString(rd.GetOrdinal("bname")));
-            //    }
-            //    con.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-
-        }
+                }
 
         private void HistoryUc_Load(object sender, EventArgs e)
         {
@@ -87,96 +65,212 @@ namespace FundWeaverApp.UserControls
             
         }
 
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-            if (comboBox3.Text == "Church")
-            {
-                //MessageBox.Show(comboBox1.Text);
-                comboBox5.Focus();
-                comboBox5.Items.Clear();
-                try
-                {
-                    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Dell-PC\Documents\Fundweaverdb.mdf;Integrated Security=True;Connect Timeout=30");
-                    string a = "select * from building where btype='" + comboBox3.Text + "' ";
-
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = con;
-                    cmd.CommandText = a;
-                    SqlDataReader rd = cmd.ExecuteReader();
-                    while (rd.Read())
-                    {
-                        comboBox5.Items.Add(rd.GetString(rd.GetOrdinal("bldname")));
-                    }
-                    con.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-
-            }
-            else if (comboBox3.Text == "Convent")
-            {
-                comboBox5.Focus();
-                comboBox5.Items.Clear();
-                try
-                {
-                    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Dell-PC\Documents\Fundweaverdb.mdf;Integrated Security=True;Connect Timeout=30");
-                    string a = "select bldname from building where btype='" + comboBox3.Text + "'";
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = con;
-                    cmd.CommandText = a;
-                    SqlDataReader rd = cmd.ExecuteReader();
-                    while (rd.Read())
-                    {
-                        comboBox5.Items.Add(rd.GetString(rd.GetOrdinal("bldname")));
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
-            {
-                comboBox5.Focus();
-                comboBox5.Items.Clear();
-                try
-                {
-                    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Dell-PC\Documents\Fundweaverdb.mdf;Integrated Security=True;Connect Timeout=30");
-                    string a = "select bname from Beneficiary";
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = con;
-                    cmd.CommandText = a;
-                    SqlDataReader rd = cmd.ExecuteReader();
-                    while (rd.Read())
-                    {
-                        comboBox5.Items.Add(rd.GetString(rd.GetOrdinal("bname")));
-                    }
-                    con.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
-        void grid()
-        {
-            DbOperations db = new DbOperations();
-            string a = "select * from article";
-            DataTable dt = db.ret(a);
-            dataGridView1.DataSource = dt;
-        }
+      //  private void orgcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        
         private void button1_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            DbOperations db = new DbOperations();
+            string a = "select * from Fund where Ftype = '" + comboBox1.Text + "'";
+            DataTable dt = db.ret(a);
+            dataGridView1.DataSource = dt;
+        }
+        
+        
+            
+        
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            if (orgcomboBox.SelectedItem== null && districttextBox.Text != null )   // only district search
+            {
+                //MessageBox.Show("inside the look u wanted"); testing whether it enters if statement or not
+                DbOperations db = new DbOperations();
+                string a = " select * from Fund where District= '"+districttextBox.Text+"'";
+                DataTable dt = db.ret(a);
+                dataGridView1.DataSource = dt;
+            }
+            if (orgcomboBox.SelectedItem != null && districttextBox.Text != null)   // district and orgbox search
+            {
+                if (orgcomboBox.Text == "Church")
+                {
+
+
+                    DbOperations db = new DbOperations();
+                    string a = "select a.*  from Fund as a inner join building as b on a.Fname = b.bldname where a.District = '" + districttextBox.Text + "' and b.btype ='" + orgcomboBox.Text + "'";
+                    DataTable dt = db.ret(a);
+                    dataGridView1.DataSource = dt;
+
+                }
+                else if (orgcomboBox.Text == "Convent")
+                {
+
+
+                    DbOperations db = new DbOperations();
+                    string a = "select a.* from Fund as a inner join building as b on a.Fname = b.bldname where a.District = '" + districttextBox.Text + "' and b.btype ='" + orgcomboBox.Text + "' ";
+                    DataTable dt = db.ret(a);
+                    dataGridView1.DataSource = dt;
+
+                }
+                else
+                {
+                    DbOperations db = new DbOperations();
+                    string a = "select a.* from Fund as a inner join Beneficiary as b on a.Fname = b.bname where a.District= '" + districttextBox.Text + "' ";
+                    DataTable dt = db.ret(a);
+                    dataGridView1.DataSource = dt;
+                }
+            }
+            if ( orgcomboBox.SelectedItem != null && namecomboBox.SelectedItem!= null )      //  name and org only
+            {
+                if (orgcomboBox.Text == "Church")
+                {
+                    //MessageBox.Show("inside");
+
+                    DbOperations db = new DbOperations();
+                    string a = "select a.*  from Fund as a inner join building as b on a.Fname = b.bldname where  b.btype ='" + orgcomboBox.Text + "' and b.bldname = '"+namecomboBox.Text+"'";
+                    DataTable dt = db.ret(a);
+                    dataGridView1.DataSource = dt;
+
+                }
+                else if (orgcomboBox.Text == "Convent")
+                {
+
+
+                    DbOperations db = new DbOperations();
+                    string a = "select a.*  from Fund as a inner join building as b on a.Fname = b.bldname where  b.btype ='" + orgcomboBox.Text + "'and b.bldname= '"+namecomboBox.Text+"' ";
+                    DataTable dt = db.ret(a);
+                    dataGridView1.DataSource = dt;
+
+                }
+                else
+                {
+                    DbOperations db = new DbOperations();
+                    string a = "select a.*  from Fund as a inner join Beneficiary as b on a.Fname = b.bname where a.Fname= '"+namecomboBox.Text+"' ";
+                    DataTable dt = db.ret(a);
+                    dataGridView1.DataSource = dt;
+                }
+            }
+            if (dateChanged1 && dateChanged2)
+                {
+                    MessageBox.Show("inside date");
+                    DbOperations db = new DbOperations();
+                    string a = "select * from Fund where Fdate between  '" + dateTimePicker1.Text + "' and '" + dateTimePicker2.Text + "'";
+                    DataTable dt = db.ret(a);
+                    dataGridView1.DataSource = dt;
+                }    
+           
+        }
+
+    private void orgcomboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+    {
+
+        if (orgcomboBox.Text == "Church")
+        {
+            //MessageBox.Show(comboBox1.Text);
+            
+            namecomboBox.Items.Clear();
+            try
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Dell-PC\Documents\Fundweaverdb.mdf;Integrated Security=True;Connect Timeout=30");
+                string a = "select * from building where btype='" + orgcomboBox.Text + "' ";
+
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = a;
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    namecomboBox.Items.Add(rd.GetString(rd.GetOrdinal("bldname")));
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+        else if (orgcomboBox.Text == "Convent")
+        {
+            
+            namecomboBox.Items.Clear();
+            try
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Dell-PC\Documents\Fundweaverdb.mdf;Integrated Security=True;Connect Timeout=30");
+                string a = "select bldname from building where btype='" + orgcomboBox.Text + "'";
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = a;
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    namecomboBox.Items.Add(rd.GetString(rd.GetOrdinal("bldname")));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        else
+        {
+            
+            namecomboBox.Items.Clear();
+            try
+            {
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Dell-PC\Documents\Fundweaverdb.mdf;Integrated Security=True;Connect Timeout=30");
+                string a = "select bname from Beneficiary";
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = a;
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    namecomboBox.Items.Add(rd.GetString(rd.GetOrdinal("bname")));
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+    }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            orgcomboBox.Text = "";
+            namecomboBox.Items.Clear();
+            namecomboBox.Text = "";
+            orgcomboBox.SelectedItem = null;
+            districttextBox.Text = "";
+            dateChanged1 = false;
+            dateChanged2 = false;
+                
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dateChanged1 = true;
+    }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            dateChanged2 = true;
         }
     }
 }

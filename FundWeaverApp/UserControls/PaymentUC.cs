@@ -56,7 +56,7 @@ namespace FundWeaverApp.UserControls
                 try
                 {
                     SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Dell-PC\Documents\Fundweaverdb.mdf;Integrated Security=True;Connect Timeout=30");
-                    string a = "select * from building where btype='"+comboBox1.Text+"' ";
+                    string a = "select * from building where btype='" + comboBox1.Text+"' ";
 
                     con.Open();
                     SqlCommand cmd = new SqlCommand();
@@ -199,16 +199,19 @@ namespace FundWeaverApp.UserControls
 
         private void button1_Click(object sender, EventArgs e)  //generation code
         {
+            
             DbOperations db = new DbOperations();
             string a = "select max(Id) from Fund";
             string b = db.maxid(a).ToString();
-            string s = "insert into Fund values('" + b + "','" + pymtnamecomboBox1.Text + "','" + amttxt.Text + "','" + dateTimePicker1.Text + "','" + PytypecomboBox.Text + "')";
+            string s = "insert into Fund values('" + b + "','" + pymtnamecomboBox1.Text + "','" + amttxt.Text + "','" + dateTimePicker1.Text + "','" + PytypecomboBox.Text + "','"+distextBox.Text+"')";
             db.nonreturn(s);
             MessageBox.Show("Insertion Successfull...");
-            pymtnamecomboBox1.Text = " ";
+            pymtnamecomboBox1.Items.Clear();
+            pymtnamecomboBox1.Text = "";
             amttxt.Text = " ";
             comboBox1.Text = "--select--";
             dateTimePicker1.Text="";
+            PytypecomboBox.Items.Clear();
             PytypecomboBox.Text = "";
             ContextBox.Text = "";
             plctextBox.Text = "";

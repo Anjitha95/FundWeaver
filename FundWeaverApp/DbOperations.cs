@@ -27,6 +27,7 @@ namespace FundWeaverApp
         }
         public DataTable ret(string s)
         {
+           
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = s;
