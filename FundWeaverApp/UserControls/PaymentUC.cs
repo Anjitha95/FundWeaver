@@ -19,14 +19,17 @@ namespace FundWeaverApp.UserControls
         {
             InitializeComponent();
             comboBox1.Focus();
-            
+            comboBox1.Text = "--select--";
+            pymtnamecomboBox1.Text = "--select--";
+            PytypecomboBox.Text= "--select--";
 
 
         }
        
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            pymtnamecomboBox1.Items.Clear();
+            PytypecomboBox.Items.Clear();
             // fund name database update in combobox
 
             try
@@ -127,9 +130,10 @@ namespace FundWeaverApp.UserControls
         private void button2_Click(object sender, EventArgs e) //clear button
         {
             dateTimePicker1.Text = "";
-            comboBox1.Text = " ";
+            comboBox1.Text = "--select-- ";
             pymtnamecomboBox1.Items.Clear();
-            pymtnamecomboBox1.Text = " ";
+            pymtnamecomboBox1.Text = "--select--";
+            PytypecomboBox.Text = "--select--";
             ContextBox.Text = " ";
             plctextBox.Text = " ";
             distextBox.Text = " ";
@@ -140,6 +144,7 @@ namespace FundWeaverApp.UserControls
 
         private void pymtnamecomboBox1_SelectedIndexChanged(object sender, EventArgs e) // automatic display of details in textbox
         {
+           
             if (comboBox1.Text == "Church" || comboBox1.Text == "Convent")
             {
                 try
@@ -207,12 +212,12 @@ namespace FundWeaverApp.UserControls
             db.nonreturn(s);
             MessageBox.Show("Insertion Successfull...");
             pymtnamecomboBox1.Items.Clear();
-            pymtnamecomboBox1.Text = "";
+            pymtnamecomboBox1.Text = "--select--";
             amttxt.Text = " ";
             comboBox1.Text = "--select--";
             dateTimePicker1.Text="";
             PytypecomboBox.Items.Clear();
-            PytypecomboBox.Text = "";
+            PytypecomboBox.Text = "--select--";
             ContextBox.Text = "";
             plctextBox.Text = "";
             distextBox.Text = "";

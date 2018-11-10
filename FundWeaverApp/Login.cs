@@ -53,14 +53,20 @@ namespace FundWeaverApp
                     FHome fm = new FHome();
                     fm.Show();
                 }
-                else
+                else 
                 {
                     this.Hide();
                     BishopF bm = new BishopF();
                     bm.Show();
                 }
+               
             }
-            
+            else
+            {
+                MessageBox.Show("Invalid username or password!!");
+                usrtextBox.Text = "";
+                passtextBox.Text = "";
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)

@@ -141,6 +141,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Church",
@@ -163,6 +165,8 @@
             // 
             // pymtnamecomboBox1
             // 
+            this.pymtnamecomboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.pymtnamecomboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.pymtnamecomboBox1.FormattingEnabled = true;
             this.pymtnamecomboBox1.Location = new System.Drawing.Point(471, 231);
             this.pymtnamecomboBox1.Name = "pymtnamecomboBox1";
@@ -220,6 +224,8 @@
             // 
             // PytypecomboBox
             // 
+            this.PytypecomboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.PytypecomboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.PytypecomboBox.FormattingEnabled = true;
             this.PytypecomboBox.Location = new System.Drawing.Point(471, 410);
             this.PytypecomboBox.Name = "PytypecomboBox";

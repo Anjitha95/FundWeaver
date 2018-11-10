@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +50,17 @@
   <ItemGroup>
     <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -77,6 +103,11 @@
     <Compile Include="forgotpass.Designer.cs">
       <DependentUpon>forgotpass.cs</DependentUpon>
     </Compile>
+    <Compile Include="FundweaverdbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FundweaverdbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +116,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\BCview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\BCview.Designer.cs">
+      <DependentUpon>BCview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Bfund.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Bfund.Designer.cs">
+      <DependentUpon>Bfund.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\FirstUc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,12 +158,21 @@
     <Compile Include="UserControls\reportgenUc.Designer.cs">
       <DependentUpon>reportgenUc.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\yearuc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\yearuc.Designer.cs">
+      <DependentUpon>yearuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserReg.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserReg.Designer.cs">
       <DependentUpon>UserReg.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BishopF.resx">
+      <DependentUpon>BishopF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="changeUC.resx">
       <DependentUpon>changeUC.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +190,12 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\BCview.resx">
+      <DependentUpon>BCview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Bfund.resx">
+      <DependentUpon>Bfund.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\FirstUc.resx">
       <DependentUpon>FirstUc.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,9 +211,23 @@
     <EmbeddedResource Include="UserControls\reportgenUc.resx">
       <DependentUpon>reportgenUc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\yearuc.resx">
+      <DependentUpon>yearuc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserReg.resx">
       <DependentUpon>UserReg.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="FundweaverdbDataSet.xsc">
+      <DependentUpon>FundweaverdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FundweaverdbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FundweaverdbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FundweaverdbDataSet.xss">
+      <DependentUpon>FundweaverdbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -186,6 +258,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_Convertible_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

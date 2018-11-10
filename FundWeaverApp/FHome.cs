@@ -143,19 +143,14 @@ namespace FundWeaverApp
             AddControlsToPannel(cu);
         }
 
-        /* private void FHome_MouseMove(object sender, MouseEventArgs e) // for enabling movement of form
-         {
-             if (e.Button == MouseButtons.Left)
-             {
-                 this.Left += e.X - lastPoint.X;
-                 this.Top += e.Y - lastPoint.Y;
-             }
-         }
-         Point lastPoint;
+        private void button1_Click_1(object sender, EventArgs e) // logout
+        {
+            MoveSidePanel(button1);
+            Login lg = new Login();
+            lg.Show();
+            this.Dispose();
+        }
 
-         private void FHome_MouseDown(object sender, MouseEventArgs e)
-         {
-             lastPoint = new Point(e.X, e.Y);
-         }*/
+       
     }
 }

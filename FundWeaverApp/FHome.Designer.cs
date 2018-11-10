@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHome));
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.changebtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -68,6 +69,7 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.MediumBlue;
+            this.panelLeft.Controls.Add(this.button1);
             this.panelLeft.Controls.Add(this.changebtn);
             this.panelLeft.Controls.Add(this.panel1);
             this.panelLeft.Controls.Add(this.panelside);
@@ -82,6 +84,23 @@
             this.panelLeft.Size = new System.Drawing.Size(233, 731);
             this.panelLeft.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(25, 657);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(202, 62);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "          Logout";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // changebtn
             // 
             this.changebtn.FlatAppearance.BorderSize = 0;
@@ -90,7 +109,7 @@
             this.changebtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.changebtn.Image = ((System.Drawing.Image)(resources.GetObject("changebtn.Image")));
             this.changebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.changebtn.Location = new System.Drawing.Point(25, 611);
+            this.changebtn.Location = new System.Drawing.Point(25, 579);
             this.changebtn.Name = "changebtn";
             this.changebtn.Size = new System.Drawing.Size(202, 62);
             this.changebtn.TabIndex = 9;
@@ -150,7 +169,7 @@
             // panelside
             // 
             this.panelside.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelside.Location = new System.Drawing.Point(0, 173);
+            this.panelside.Location = new System.Drawing.Point(0, 156);
             this.panelside.Name = "panelside";
             this.panelside.Size = new System.Drawing.Size(10, 62);
             this.panelside.TabIndex = 3;
@@ -164,7 +183,7 @@
             this.yrbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.yrbtn.Image = ((System.Drawing.Image)(resources.GetObject("yrbtn.Image")));
             this.yrbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.yrbtn.Location = new System.Drawing.Point(22, 522);
+            this.yrbtn.Location = new System.Drawing.Point(22, 495);
             this.yrbtn.Name = "yrbtn";
             this.yrbtn.Size = new System.Drawing.Size(202, 62);
             this.yrbtn.TabIndex = 8;
@@ -181,7 +200,7 @@
             this.fundbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.fundbtn.Image = ((System.Drawing.Image)(resources.GetObject("fundbtn.Image")));
             this.fundbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.fundbtn.Location = new System.Drawing.Point(22, 426);
+            this.fundbtn.Location = new System.Drawing.Point(22, 403);
             this.fundbtn.Name = "fundbtn";
             this.fundbtn.Size = new System.Drawing.Size(202, 62);
             this.fundbtn.TabIndex = 7;
@@ -198,7 +217,7 @@
             this.genbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.genbtn.Image = global::FundWeaverApp.Properties.Resources.icons8_Receipt_32px;
             this.genbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.genbtn.Location = new System.Drawing.Point(22, 339);
+            this.genbtn.Location = new System.Drawing.Point(22, 317);
             this.genbtn.Name = "genbtn";
             this.genbtn.Size = new System.Drawing.Size(211, 62);
             this.genbtn.TabIndex = 6;
@@ -215,7 +234,7 @@
             this.newbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.newbtn.Image = ((System.Drawing.Image)(resources.GetObject("newbtn.Image")));
             this.newbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.newbtn.Location = new System.Drawing.Point(22, 253);
+            this.newbtn.Location = new System.Drawing.Point(22, 235);
             this.newbtn.Name = "newbtn";
             this.newbtn.Size = new System.Drawing.Size(202, 62);
             this.newbtn.TabIndex = 5;
@@ -232,7 +251,7 @@
             this.homebtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.homebtn.Image = ((System.Drawing.Image)(resources.GetObject("homebtn.Image")));
             this.homebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.homebtn.Location = new System.Drawing.Point(22, 173);
+            this.homebtn.Location = new System.Drawing.Point(22, 156);
             this.homebtn.Name = "homebtn";
             this.homebtn.Size = new System.Drawing.Size(205, 62);
             this.homebtn.TabIndex = 4;
@@ -431,5 +450,6 @@
         private DragContol dragContol1;
         private DragContol dragContol2;
         private System.Windows.Forms.Button changebtn;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -86,7 +86,36 @@ namespace FundWeaverApp.UserControls
         
         private void button2_Click(object sender, EventArgs e)
         {
+            /*if(orgcomboBox.SelectedItem != null && namecomboBox.SelectedItem == null && districttextBox.Text == null)
+            {
+                if (orgcomboBox.Text == "Church")
+                {
 
+
+                    DbOperations db = new DbOperations();
+                    string a = "select a.*  from Fund as a inner join building as b on a.Fname = b.bldname where b.btype ='" + orgcomboBox.Text + "'";
+                    DataTable dt = db.ret(a);
+                    dataGridView1.DataSource = dt;
+
+                }
+                else if (orgcomboBox.Text == "Convent")
+                {
+
+
+                    DbOperations db = new DbOperations();
+                    string a = "select a.* from Fund as a inner join building as b on a.Fname = b.bldname where b.btype ='" + orgcomboBox.Text + "' ";
+                    DataTable dt = db.ret(a);
+                    dataGridView1.DataSource = dt;
+
+                }
+                else
+                {
+                    DbOperations db = new DbOperations();
+                    string a = "select a.* from Fund as a inner join Beneficiary as b on a.Fname = b.bname where a.District= '" + districttextBox.Text + "' ";
+                    DataTable dt = db.ret(a);
+                    dataGridView1.DataSource = dt;
+                }
+            }*/
             if (orgcomboBox.SelectedItem== null && districttextBox.Text != null )   // only district search
             {
                 //MessageBox.Show("inside the look u wanted"); testing whether it enters if statement or not
@@ -157,7 +186,7 @@ namespace FundWeaverApp.UserControls
             }
             if (dateChanged1 && dateChanged2)
                 {
-                    MessageBox.Show("inside date");
+                    //MessageBox.Show("inside date");
                     DbOperations db = new DbOperations();
                     string a = "select * from Fund where Fdate between  '" + dateTimePicker1.Text + "' and '" + dateTimePicker2.Text + "'";
                     DataTable dt = db.ret(a);
@@ -256,6 +285,8 @@ namespace FundWeaverApp.UserControls
             districttextBox.Text = "";
             dateChanged1 = false;
             dateChanged2 = false;
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
                 
         }
 
@@ -271,6 +302,13 @@ namespace FundWeaverApp.UserControls
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
             dateChanged2 = true;
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+            comboBox1.Text = " ";
         }
     }
 }

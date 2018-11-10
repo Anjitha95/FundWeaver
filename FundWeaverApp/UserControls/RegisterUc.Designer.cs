@@ -73,6 +73,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(763, 534);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button2
             // 
@@ -104,6 +105,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Church",
@@ -191,11 +194,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(243, 52);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(266, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 19);
+            this.label1.Size = new System.Drawing.Size(207, 40);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Church/Convent Registration";
+            this.label1.Text = "Registration";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel5
