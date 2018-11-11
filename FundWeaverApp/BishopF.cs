@@ -15,12 +15,12 @@ namespace FundWeaverApp
     {
         int PanelWidth;
         bool iscollapsed;
-        public BishopF()
+        public BishopF(string d)
         {
             InitializeComponent();
             FirstUc bf = new FirstUc();
             AddControlsToPannel(bf);
-            TimeTimer.Start();
+            label3.Text = d;
             PanelWidth = Leftpanel.Width;
             iscollapsed = false;
 
@@ -78,12 +78,7 @@ namespace FundWeaverApp
             panelControls.Controls.Add(c);
         }
 
-        private void TimeTimer_Tick(object sender, EventArgs e)
-        {
-            DateTime dt = DateTime.Now;
-            timeLab1.Text = dt.ToString("HH:MM:ss");
-        }
-
+        
         private void homebtn_Click(object sender, EventArgs e)
         {
             MoveSidePanel(homebtn);
@@ -127,5 +122,6 @@ namespace FundWeaverApp
             this.Dispose();
         }
 
+        
     }   
 }

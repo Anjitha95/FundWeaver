@@ -34,7 +34,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -119,14 +118,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.MediumBlue;
-            this.panel2.Location = new System.Drawing.Point(3, 536);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(876, 10);
-            this.panel2.TabIndex = 9;
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -145,7 +136,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.comboBox1);
@@ -171,7 +161,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
     }
 }

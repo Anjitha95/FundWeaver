@@ -52,6 +52,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.dragContol1 = new FundWeaverApp.DragContol();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -89,6 +90,7 @@
             this.button3.Size = new System.Drawing.Size(48, 44);
             this.button3.TabIndex = 13;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -100,6 +102,7 @@
             this.button2.Size = new System.Drawing.Size(35, 38);
             this.button2.TabIndex = 12;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel3
             // 
@@ -313,6 +316,10 @@
             this.panel6.Size = new System.Drawing.Size(10, 660);
             this.panel6.TabIndex = 1;
             // 
+            // dragContol1
+            // 
+            this.dragContol1.SelectControl = this.panel2;
+            // 
             // UserReg
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -361,5 +368,6 @@
         private System.Windows.Forms.Label passcontrollabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox emailtextBox;
+        private DragContol dragContol1;
     }
 }

@@ -8,13 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace FundWeaverApp.UserControls
 {
     public partial class PaymentUC : UserControl
     {
-        
-        
+        public static string SetValueForText1 = "";
+        public static string SetValueForText2 = "";
+        public static string SetValueForText3 = "";
+        public static string SetValueForText4 = "";
+        public static string SetValueForText5 = "";
+        public static string SetValueForText6 = "";
         public PaymentUC()
         {
             InitializeComponent();
@@ -95,6 +102,7 @@ namespace FundWeaverApp.UserControls
                     {
                         pymtnamecomboBox1.Items.Add(rd.GetString(rd.GetOrdinal("bldname")));
                     }
+                    con.Close();
                 }
                 catch (Exception ex)
                 {
@@ -210,7 +218,15 @@ namespace FundWeaverApp.UserControls
             string b = db.maxid(a).ToString();
             string s = "insert into Fund values('" + b + "','" + pymtnamecomboBox1.Text + "','" + amttxt.Text + "','" + dateTimePicker1.Text + "','" + PytypecomboBox.Text + "','"+distextBox.Text+"')";
             db.nonreturn(s);
-            MessageBox.Show("Insertion Successfull...");
+            
+            SetValueForText1 = dateTimePicker1.Text;
+            SetValueForText2 = pymtnamecomboBox1.Text;
+            SetValueForText3 = ContextBox.Text;
+            SetValueForText4 = distextBox.Text;
+            SetValueForText5 = PytypecomboBox.Text;
+            SetValueForText6 = amttxt.Text;
+            printrc pc = new printrc();
+            pc.Show();
             pymtnamecomboBox1.Items.Clear();
             pymtnamecomboBox1.Text = "--select--";
             amttxt.Text = " ";

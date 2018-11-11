@@ -41,7 +41,8 @@ namespace FundWeaverApp
         private void button1_Click(object sender, EventArgs e)
         {
             DbOperations db = new DbOperations();
-            string s = "select *from login where username='" + usrtextBox.Text + "' and password='" + passtextBox.Text + "'";
+            string d = usrtextBox.Text;
+            string s = "select *from login where username='" + d + "' and password='" + passtextBox.Text + "'";
             DataTable dt = db.ret(s);
             if(dt.Rows.Count > 0)
             {
@@ -50,13 +51,13 @@ namespace FundWeaverApp
                 if(utype == "FM")                                // authentication according to roles
                 {
                     this.Hide();
-                    FHome fm = new FHome();
+                    FHome fm = new FHome(d);
                     fm.Show();
                 }
                 else 
                 {
                     this.Hide();
-                    BishopF bm = new BishopF();
+                    BishopF bm = new BishopF(d);
                     bm.Show();
                 }
                

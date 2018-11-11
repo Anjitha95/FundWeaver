@@ -18,6 +18,9 @@ namespace FundWeaverApp.UserControls
         public HistoryUc()
         {
             InitializeComponent();
+            comboBox1.Text = "--select--";
+            namecomboBox.Text = "--select--";
+            orgcomboBox.Text = "--select--";
             try
             {
                 SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Dell-PC\Documents\Fundweaverdb.mdf;Integrated Security=True;Connect Timeout=30");
@@ -243,11 +246,13 @@ namespace FundWeaverApp.UserControls
                 {
                     namecomboBox.Items.Add(rd.GetString(rd.GetOrdinal("bldname")));
                 }
-            }
+                    con.Close();
+                }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+               
         }
         else
         {
@@ -278,9 +283,10 @@ namespace FundWeaverApp.UserControls
 
         private void button3_Click(object sender, EventArgs e)
         {
-            orgcomboBox.Text = "";
+            comboBox1.Text = "--select--";
+            namecomboBox.Text = "--select--";
+            orgcomboBox.Text = "--select--";
             namecomboBox.Items.Clear();
-            namecomboBox.Text = "";
             orgcomboBox.SelectedItem = null;
             districttextBox.Text = "";
             dateChanged1 = false;

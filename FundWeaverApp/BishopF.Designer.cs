@@ -48,11 +48,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button8 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.timeLab1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelControls = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.TimeTimer = new System.Windows.Forms.Timer(this.components);
             this.dragContol1 = new FundWeaverApp.DragContol();
             this.dragContol2 = new FundWeaverApp.DragContol();
             this.Leftpanel.SuspendLayout();
@@ -134,7 +133,7 @@
             this.yrbtn.Name = "yrbtn";
             this.yrbtn.Size = new System.Drawing.Size(202, 62);
             this.yrbtn.TabIndex = 14;
-            this.yrbtn.Text = "  Year End Report Generation";
+            this.yrbtn.Text = "  Year End View";
             this.yrbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.yrbtn.UseVisualStyleBackColor = true;
             this.yrbtn.Click += new System.EventHandler(this.yrbtn_Click);
@@ -303,7 +302,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.MediumBlue;
-            this.panel3.Controls.Add(this.timeLab1);
+            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(233, 51);
@@ -311,17 +310,15 @@
             this.panel3.Size = new System.Drawing.Size(876, 83);
             this.panel3.TabIndex = 14;
             // 
-            // timeLab1
+            // label3
             // 
-            this.timeLab1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.timeLab1.AutoSize = true;
-            this.timeLab1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeLab1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.timeLab1.Location = new System.Drawing.Point(740, 30);
-            this.timeLab1.Name = "timeLab1";
-            this.timeLab1.Size = new System.Drawing.Size(83, 19);
-            this.timeLab1.TabIndex = 1;
-            this.timeLab1.Text = "HH:MM:SS";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label3.Location = new System.Drawing.Point(117, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 19);
+            this.label3.TabIndex = 1;
             // 
             // label2
             // 
@@ -396,7 +393,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label timeLab1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelControls;
         private System.Windows.Forms.Timer timer1;
@@ -405,10 +401,10 @@
         private System.Windows.Forms.Button fundbtn;
         private System.Windows.Forms.Button newbtn;
         private System.Windows.Forms.Button homebtn;
-        private System.Windows.Forms.Timer TimeTimer;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button changebtn;
         private DragContol dragContol1;
         private DragContol dragContol2;
+        private System.Windows.Forms.Label label3;
     }
 }

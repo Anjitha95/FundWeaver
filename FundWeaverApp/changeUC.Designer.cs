@@ -32,15 +32,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.newtextBox = new System.Windows.Forms.TextBox();
-            this.confirmtextBox = new System.Windows.Forms.TextBox();
             this.changelabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.usrtextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,26 +79,6 @@
             this.panel4.Size = new System.Drawing.Size(849, 13);
             this.panel4.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(224, 305);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 19);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "New Password";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(224, 359);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 19);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Confirm Password";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -111,20 +91,11 @@
             // 
             // newtextBox
             // 
-            this.newtextBox.Location = new System.Drawing.Point(451, 305);
+            this.newtextBox.Location = new System.Drawing.Point(451, 338);
             this.newtextBox.Name = "newtextBox";
             this.newtextBox.Size = new System.Drawing.Size(247, 27);
             this.newtextBox.TabIndex = 7;
             this.newtextBox.UseSystemPasswordChar = true;
-            // 
-            // confirmtextBox
-            // 
-            this.confirmtextBox.Location = new System.Drawing.Point(451, 359);
-            this.confirmtextBox.Name = "confirmtextBox";
-            this.confirmtextBox.PasswordChar = '.';
-            this.confirmtextBox.Size = new System.Drawing.Size(247, 27);
-            this.confirmtextBox.TabIndex = 8;
-            this.confirmtextBox.UseSystemPasswordChar = true;
             // 
             // changelabel
             // 
@@ -132,9 +103,9 @@
             this.changelabel.ForeColor = System.Drawing.Color.Red;
             this.changelabel.Location = new System.Drawing.Point(333, 186);
             this.changelabel.Name = "changelabel";
-            this.changelabel.Size = new System.Drawing.Size(208, 21);
+            this.changelabel.Size = new System.Drawing.Size(219, 21);
             this.changelabel.TabIndex = 9;
-            this.changelabel.Text = "Password Doesnot match";
+            this.changelabel.Text = "Password Changing Failed!";
             this.changelabel.Visible = false;
             // 
             // button1
@@ -144,7 +115,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(308, 452);
+            this.button1.Location = new System.Drawing.Point(326, 413);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(254, 37);
             this.button1.TabIndex = 10;
@@ -156,7 +127,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(224, 253);
+            this.label4.Location = new System.Drawing.Point(249, 253);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 19);
             this.label4.TabIndex = 11;
@@ -169,19 +140,46 @@
             this.usrtextBox.Size = new System.Drawing.Size(247, 27);
             this.usrtextBox.TabIndex = 12;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(451, 294);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(247, 27);
+            this.textBox1.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(249, 298);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 19);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Old Password";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(249, 338);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 19);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "New Password";
+            // 
             // changeUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.usrtextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.changelabel);
-            this.Controls.Add(this.confirmtextBox);
             this.Controls.Add(this.newtextBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -189,7 +187,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.MediumBlue;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "changeUC";
             this.Size = new System.Drawing.Size(876, 597);
             this.ResumeLayout(false);
@@ -203,14 +201,14 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox newtextBox;
-        private System.Windows.Forms.TextBox confirmtextBox;
         private System.Windows.Forms.Label changelabel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox usrtextBox;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
     }
 }

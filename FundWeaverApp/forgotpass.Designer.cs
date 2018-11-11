@@ -42,6 +42,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.mailtextBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dragContol1 = new FundWeaverApp.DragContol();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,14 +104,15 @@
             this.button2.Size = new System.Drawing.Size(48, 46);
             this.button2.TabIndex = 15;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MediumBlue;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 685);
+            this.panel2.Location = new System.Drawing.Point(0, 715);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1109, 46);
+            this.panel2.Size = new System.Drawing.Size(1109, 16);
             this.panel2.TabIndex = 1;
             // 
             // panel3
@@ -119,7 +121,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 55);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(17, 630);
+            this.panel3.Size = new System.Drawing.Size(17, 660);
             this.panel3.TabIndex = 2;
             // 
             // panel4
@@ -128,7 +130,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(1094, 55);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(15, 630);
+            this.panel4.Size = new System.Drawing.Size(15, 660);
             this.panel4.TabIndex = 3;
             // 
             // label1
@@ -186,6 +188,10 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // dragContol1
+            // 
+            this.dragContol1.SelectControl = this.panel1;
+            // 
             // forgotpass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -232,5 +238,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private DragContol dragContol1;
     }
 }

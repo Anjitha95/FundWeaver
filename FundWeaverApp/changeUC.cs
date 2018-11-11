@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FundWeaverApp
 {
@@ -20,22 +21,35 @@ namespace FundWeaverApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(newtextBox.Text == confirmtextBox.Text)
+            string b = usrtextBox.Text;
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Dell-PC\Documents\Fundweaverdb.mdf;Integrated Security=True;Connect Timeout=30");
+            string sqlquery = "SELECT password FROM Login where Username='" + usrtextBox.Text + "'";
+            SqlCommand cmd = new SqlCommand(sqlquery, con);
+            cmd.Parameters.AddWithValue("@username", usrtextBox.Text);
+            cmd.Connection = con;
+            con.Open();
+            string currentPassword = (string)cmd.ExecuteScalar();
+
+            if (currentPassword == textBox1.Text)
             {
-                string b = usrtextBox.Text;
                 DbOperations db = new DbOperations();
-                string c = "update Login set password ='" + newtextBox.Text + "'  where username='" + b + "'";
+                string c = "update Login set password ='" + newtextBox.Text + "'  where username='" + b + "' ";
                 db.nonreturn(c);
                 MessageBox.Show("Successfull.....");
-                newtextBox.Text = "";
-                confirmtextBox.Text = "";
+                changelabel.Visible = false;
                 usrtextBox.Text = "";
+                textBox1.Text = "";
+                newtextBox.Text = "";
+
             }
             else
             {
                 changelabel.Visible = true;
+                usrtextBox.Text = "";
+                textBox1.Text = "";
+                newtextBox.Text = "";
             }
-            
+            con.Close();
         }
     }
 }

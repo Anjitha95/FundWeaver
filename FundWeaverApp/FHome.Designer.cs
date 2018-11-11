@@ -48,15 +48,12 @@
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.timeLab = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelAbove = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.timerTime = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelControls = new System.Windows.Forms.Panel();
-            this.dragContol1 = new FundWeaverApp.DragContol();
-            this.dragContol2 = new FundWeaverApp.DragContol();
             this.panelLeft.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -322,18 +319,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Welcome";
             // 
-            // timeLab
-            // 
-            this.timeLab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.timeLab.AutoSize = true;
-            this.timeLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeLab.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.timeLab.Location = new System.Drawing.Point(740, 30);
-            this.timeLab.Name = "timeLab";
-            this.timeLab.Size = new System.Drawing.Size(83, 19);
-            this.timeLab.TabIndex = 1;
-            this.timeLab.Text = "HH:MM:SS";
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
@@ -353,7 +338,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.MediumBlue;
-            this.panel3.Controls.Add(this.timeLab);
+            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(233, 51);
@@ -361,9 +346,15 @@
             this.panel3.Size = new System.Drawing.Size(876, 83);
             this.panel3.TabIndex = 13;
             // 
-            // timerTime
+            // label3
             // 
-            this.timerTime.Tick += new System.EventHandler(this.timerTime_Tick);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label3.Location = new System.Drawing.Point(117, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 19);
+            this.label3.TabIndex = 1;
             // 
             // panel4
             // 
@@ -381,14 +372,6 @@
             this.panelControls.Name = "panelControls";
             this.panelControls.Size = new System.Drawing.Size(876, 597);
             this.panelControls.TabIndex = 0;
-            // 
-            // dragContol1
-            // 
-            this.dragContol1.SelectControl = this.panelAbove;
-            // 
-            // dragContol2
-            // 
-            this.dragContol2.SelectControl = this.panel1;
             // 
             // FHome
             // 
@@ -437,13 +420,11 @@
         private System.Windows.Forms.Panel panelside;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label timeLab;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelAbove;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Timer timerTime;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panelControls;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -451,5 +432,6 @@
         private DragContol dragContol2;
         private System.Windows.Forms.Button changebtn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
     }
 }

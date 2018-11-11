@@ -15,14 +15,14 @@ namespace FundWeaverApp
     {
         int PanelWidth;
         bool isCollapsed;
-        public FHome()
+        public FHome(string d)
         {
             InitializeComponent();
             FirstUc fc = new FirstUc();
             AddControlsToPannel(fc);   // Starting UC
-            timerTime.Start();
             PanelWidth = panelLeft.Width;
             isCollapsed = false;
+            label3.Text = d;
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
@@ -125,11 +125,7 @@ namespace FundWeaverApp
             MoveSidePanel(convertbtn);
         }*/
 
-        private void timerTime_Tick(object sender, EventArgs e)
-        {
-            DateTime dt = DateTime.Now;
-            timeLab.Text = dt.ToString("HH:MM:ss");
-        }
+        
 
         private void label4_Click(object sender, EventArgs e)
         {
