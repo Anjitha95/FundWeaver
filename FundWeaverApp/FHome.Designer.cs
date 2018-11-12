@@ -54,6 +54,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelControls = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -66,7 +67,7 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.MediumBlue;
-            this.panelLeft.Controls.Add(this.button1);
+            this.panelLeft.Controls.Add(this.button2);
             this.panelLeft.Controls.Add(this.changebtn);
             this.panelLeft.Controls.Add(this.panel1);
             this.panelLeft.Controls.Add(this.panelside);
@@ -89,7 +90,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(25, 657);
+            this.button1.Location = new System.Drawing.Point(662, 18);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(202, 62);
             this.button1.TabIndex = 17;
@@ -106,7 +107,7 @@
             this.changebtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.changebtn.Image = ((System.Drawing.Image)(resources.GetObject("changebtn.Image")));
             this.changebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.changebtn.Location = new System.Drawing.Point(25, 579);
+            this.changebtn.Location = new System.Drawing.Point(25, 628);
             this.changebtn.Name = "changebtn";
             this.changebtn.Size = new System.Drawing.Size(202, 62);
             this.changebtn.TabIndex = 9;
@@ -180,7 +181,7 @@
             this.yrbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.yrbtn.Image = ((System.Drawing.Image)(resources.GetObject("yrbtn.Image")));
             this.yrbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.yrbtn.Location = new System.Drawing.Point(22, 495);
+            this.yrbtn.Location = new System.Drawing.Point(22, 544);
             this.yrbtn.Name = "yrbtn";
             this.yrbtn.Size = new System.Drawing.Size(202, 62);
             this.yrbtn.TabIndex = 8;
@@ -197,7 +198,7 @@
             this.fundbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.fundbtn.Image = ((System.Drawing.Image)(resources.GetObject("fundbtn.Image")));
             this.fundbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.fundbtn.Location = new System.Drawing.Point(22, 403);
+            this.fundbtn.Location = new System.Drawing.Point(22, 467);
             this.fundbtn.Name = "fundbtn";
             this.fundbtn.Size = new System.Drawing.Size(202, 62);
             this.fundbtn.TabIndex = 7;
@@ -214,7 +215,7 @@
             this.genbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.genbtn.Image = global::FundWeaverApp.Properties.Resources.icons8_Receipt_32px;
             this.genbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.genbtn.Location = new System.Drawing.Point(22, 317);
+            this.genbtn.Location = new System.Drawing.Point(22, 384);
             this.genbtn.Name = "genbtn";
             this.genbtn.Size = new System.Drawing.Size(211, 62);
             this.genbtn.TabIndex = 6;
@@ -338,6 +339,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.MediumBlue;
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -372,6 +374,23 @@
             this.panelControls.Name = "panelControls";
             this.panelControls.Size = new System.Drawing.Size(876, 597);
             this.panelControls.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(22, 316);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(202, 62);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "  Church/convent";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FHome
             // 
@@ -433,5 +452,6 @@
         private System.Windows.Forms.Button changebtn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
     }
 }

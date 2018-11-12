@@ -141,12 +141,17 @@ namespace FundWeaverApp
 
         private void button1_Click_1(object sender, EventArgs e) // logout
         {
-            MoveSidePanel(button1);
+           
             Login lg = new Login();
             lg.Show();
             this.Dispose();
         }
 
-       
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MoveSidePanel(button2);
+            updatech ud = new updatech();
+            AddControlsToPannel(ud);
+        }
     }
 }

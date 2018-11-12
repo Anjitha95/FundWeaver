@@ -32,15 +32,22 @@ namespace FundWeaverApp
 
             if (currentPassword == textBox1.Text)
             {
-                DbOperations db = new DbOperations();
-                string c = "update Login set password ='" + newtextBox.Text + "'  where username='" + b + "' ";
-                db.nonreturn(c);
-                MessageBox.Show("Successfull.....");
-                changelabel.Visible = false;
-                usrtextBox.Text = "";
-                textBox1.Text = "";
-                newtextBox.Text = "";
+                if (newtextBox.Text == contextBox.Text)
+                {
 
+                    DbOperations db = new DbOperations();
+                    string c = "update Login set password ='" + newtextBox.Text + "'  where username='" + b + "' ";
+                    db.nonreturn(c);
+                    MessageBox.Show("Successfull.....");
+                    changelabel.Visible = false;
+                    usrtextBox.Text = "";
+                    textBox1.Text = "";
+                    newtextBox.Text = "";
+                }
+                else
+                {
+                    changelabel.Visible = true;
+                }
             }
             else
             {

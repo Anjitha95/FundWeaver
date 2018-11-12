@@ -41,6 +41,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.contextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panel1
@@ -115,7 +117,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(326, 413);
+            this.button1.Location = new System.Drawing.Point(335, 460);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(254, 37);
             this.button1.TabIndex = 10;
@@ -146,6 +148,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(247, 27);
             this.textBox1.TabIndex = 13;
+            this.textBox1.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -161,17 +164,37 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(249, 338);
+            this.label1.Location = new System.Drawing.Point(249, 342);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 19);
             this.label1.TabIndex = 4;
             this.label1.Text = "New Password";
+            // 
+            // contextBox
+            // 
+            this.contextBox.Location = new System.Drawing.Point(451, 385);
+            this.contextBox.Name = "contextBox";
+            this.contextBox.Size = new System.Drawing.Size(247, 27);
+            this.contextBox.TabIndex = 15;
+            this.contextBox.UseSystemPasswordChar = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(249, 389);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(145, 19);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Confirm Password";
             // 
             // changeUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.contextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.usrtextBox);
@@ -210,5 +233,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox contextBox;
+        private System.Windows.Forms.Label label2;
     }
 }

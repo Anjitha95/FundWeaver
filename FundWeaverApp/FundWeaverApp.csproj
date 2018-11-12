@@ -164,6 +164,12 @@
     <Compile Include="UserControls\reportgenUc.Designer.cs">
       <DependentUpon>reportgenUc.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\updatech.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\updatech.Designer.cs">
+      <DependentUpon>updatech.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\yearuc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\reportgenUc.resx">
       <DependentUpon>reportgenUc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\updatech.resx">
+      <DependentUpon>updatech.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\yearuc.resx">
       <DependentUpon>yearuc.cs</DependentUpon>
