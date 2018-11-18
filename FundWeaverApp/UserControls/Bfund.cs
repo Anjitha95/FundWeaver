@@ -44,7 +44,7 @@ namespace FundWeaverApp.UserControls
         {
 
             DbOperations db = new DbOperations();
-            string a = "select * from Fund where Ftype = '" + comboBox1.Text + "'";
+            string a = "select Id as Recieptnumber, Fname as Name, famount as Amount, Fdate as PaymentDate,Ftype as FundType, District from Fund where Ftype = '" + comboBox1.Text + "'";
             DataTable dt = db.ret(a);
             dataGridView1.DataSource = dt;
         }
@@ -58,7 +58,7 @@ namespace FundWeaverApp.UserControls
 
 
                    DbOperations db = new DbOperations();
-                   string a = "select a.*  from Fund as a inner join building as b on a.Fname = b.bldname where b.btype ='" + comboBox2.Text + "'";
+                   string a = "select a.Id as Recieptnumber, a.Fname as Name, a.famount as Amount, a.Fdate as PaymentDate,a.Ftype as FundType, a.District from Fund as a inner join building as b on a.Fname = b.bldname where b.btype ='" + comboBox2.Text + "'";
                    DataTable dt = db.ret(a);
                    dataGridView1.DataSource = dt;
 
@@ -68,7 +68,7 @@ namespace FundWeaverApp.UserControls
 
 
                    DbOperations db = new DbOperations();
-                   string a = "select a.* from Fund as a inner join building as b on a.Fname = b.bldname where b.btype ='" + comboBox2.Text + "' ";
+                   string a = "select a.Id as Recieptnumber, a.Fname as Name, a.famount as Amount, a.Fdate as PaymentDate,a.Ftype as FundType, a.District from Fund as a inner join building as b on a.Fname = b.bldname where b.btype ='" + comboBox2.Text + "' ";
                    DataTable dt = db.ret(a);
                    dataGridView1.DataSource = dt;
 
@@ -76,7 +76,7 @@ namespace FundWeaverApp.UserControls
                else
                {
                    DbOperations db = new DbOperations();
-                   string a = "select a.* from Fund as a inner join Beneficiary as b on a.Fname = b.bname ";
+                   string a = "select a.Id as Recieptnumber, a.Fname as Name, a.famount as Amount, a.Fdate as PaymentDate,a.Ftype as FundType, a.District from Fund as a inner join Beneficiary as b on a.Fname = b.bname ";
                    DataTable dt = db.ret(a);
                    dataGridView1.DataSource = dt;
                }

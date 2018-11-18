@@ -212,31 +212,43 @@ namespace FundWeaverApp.UserControls
 
         private void button1_Click(object sender, EventArgs e)  //generation code
         {
+            if (string.IsNullOrWhiteSpace(amttxt.Text))
+            {
+                MessageBox.Show("Enter amount");
+                
+
+            }
+            else
+            {
+                DbOperations db = new DbOperations();
+                string a = "select max(Id) from Fund";
+                string b = db.maxid(a).ToString();
+                string s = "insert into Fund values('" + b + "','" + pymtnamecomboBox1.Text + "','" + amttxt.Text + "','" + dateTimePicker1.Text + "','" + PytypecomboBox.Text + "','" + distextBox.Text + "')";
+                db.nonreturn(s);
+
+                SetValueForText1 = dateTimePicker1.Text;
+                SetValueForText2 = pymtnamecomboBox1.Text;
+                SetValueForText3 = ContextBox.Text;
+                SetValueForText4 = distextBox.Text;
+                SetValueForText5 = PytypecomboBox.Text;
+                SetValueForText6 = amttxt.Text;
+                printrc pc = new printrc();
+                pc.Show();
+                pymtnamecomboBox1.Items.Clear();
+                pymtnamecomboBox1.Text = "--select--";
+                amttxt.Text = " ";
+                comboBox1.Text = "--select--";
+                dateTimePicker1.Text = "";
+                PytypecomboBox.Items.Clear();
+                PytypecomboBox.Text = "--select--";
+                ContextBox.Text = "";
+                plctextBox.Text = "";
+                distextBox.Text = "";
+            }
             
-            DbOperations db = new DbOperations();
-            string a = "select max(Id) from Fund";
-            string b = db.maxid(a).ToString();
-            string s = "insert into Fund values('" + b + "','" + pymtnamecomboBox1.Text + "','" + amttxt.Text + "','" + dateTimePicker1.Text + "','" + PytypecomboBox.Text + "','"+distextBox.Text+"')";
-            db.nonreturn(s);
+
+                
             
-            SetValueForText1 = dateTimePicker1.Text;
-            SetValueForText2 = pymtnamecomboBox1.Text;
-            SetValueForText3 = ContextBox.Text;
-            SetValueForText4 = distextBox.Text;
-            SetValueForText5 = PytypecomboBox.Text;
-            SetValueForText6 = amttxt.Text;
-            printrc pc = new printrc();
-            pc.Show();
-            pymtnamecomboBox1.Items.Clear();
-            pymtnamecomboBox1.Text = "--select--";
-            amttxt.Text = " ";
-            comboBox1.Text = "--select--";
-            dateTimePicker1.Text="";
-            PytypecomboBox.Items.Clear();
-            PytypecomboBox.Text = "--select--";
-            ContextBox.Text = "";
-            plctextBox.Text = "";
-            distextBox.Text = "";
         }
     }
 }

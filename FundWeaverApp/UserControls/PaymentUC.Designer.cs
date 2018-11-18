@@ -190,9 +190,9 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(444, 523);
+            this.button2.Location = new System.Drawing.Point(532, 523);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 33);
+            this.button2.Size = new System.Drawing.Size(149, 33);
             this.button2.TabIndex = 18;
             this.button2.Text = "Clear";
             this.button2.UseVisualStyleBackColor = false;
@@ -204,7 +204,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(283, 523);
+            this.button1.Location = new System.Drawing.Point(339, 523);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 33);
             this.button1.TabIndex = 17;
@@ -278,12 +278,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(294, 63);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(371, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 26);
+            this.label1.Size = new System.Drawing.Size(130, 32);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Receipt Generation";
+            this.label1.Text = "Payment";
             // 
             // panel5
             // 

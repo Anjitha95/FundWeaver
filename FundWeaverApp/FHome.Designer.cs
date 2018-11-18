@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FHome));
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.changebtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -43,6 +43,7 @@
             this.genbtn = new System.Windows.Forms.Button();
             this.newbtn = new System.Windows.Forms.Button();
             this.homebtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -54,7 +55,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelControls = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -67,8 +68,8 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.MediumBlue;
+            this.panelLeft.Controls.Add(this.button3);
             this.panelLeft.Controls.Add(this.button2);
-            this.panelLeft.Controls.Add(this.changebtn);
             this.panelLeft.Controls.Add(this.panel1);
             this.panelLeft.Controls.Add(this.panelside);
             this.panelLeft.Controls.Add(this.yrbtn);
@@ -82,39 +83,39 @@
             this.panelLeft.Size = new System.Drawing.Size(233, 731);
             this.panelLeft.TabIndex = 0;
             // 
-            // button1
+            // button2
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(662, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 62);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "          Logout";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(22, 316);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(202, 62);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "  View Registered Members";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // changebtn
             // 
+            this.changebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.changebtn.FlatAppearance.BorderSize = 0;
             this.changebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.changebtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changebtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.changebtn.Image = ((System.Drawing.Image)(resources.GetObject("changebtn.Image")));
-            this.changebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.changebtn.Location = new System.Drawing.Point(25, 628);
+            this.changebtn.Location = new System.Drawing.Point(711, 14);
             this.changebtn.Name = "changebtn";
-            this.changebtn.Size = new System.Drawing.Size(202, 62);
+            this.changebtn.Size = new System.Drawing.Size(62, 62);
             this.changebtn.TabIndex = 9;
-            this.changebtn.Text = "  Change Password";
-            this.changebtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.changebtn.Text = " ";
             this.changebtn.UseVisualStyleBackColor = true;
             this.changebtn.Click += new System.EventHandler(this.button1_Click);
+            this.changebtn.MouseHover += new System.EventHandler(this.changebtn_MouseHover);
             // 
             // panel1
             // 
@@ -181,7 +182,7 @@
             this.yrbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.yrbtn.Image = ((System.Drawing.Image)(resources.GetObject("yrbtn.Image")));
             this.yrbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.yrbtn.Location = new System.Drawing.Point(22, 544);
+            this.yrbtn.Location = new System.Drawing.Point(25, 613);
             this.yrbtn.Name = "yrbtn";
             this.yrbtn.Size = new System.Drawing.Size(202, 62);
             this.yrbtn.TabIndex = 8;
@@ -198,7 +199,7 @@
             this.fundbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.fundbtn.Image = ((System.Drawing.Image)(resources.GetObject("fundbtn.Image")));
             this.fundbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.fundbtn.Location = new System.Drawing.Point(22, 467);
+            this.fundbtn.Location = new System.Drawing.Point(25, 536);
             this.fundbtn.Name = "fundbtn";
             this.fundbtn.Size = new System.Drawing.Size(202, 62);
             this.fundbtn.TabIndex = 7;
@@ -215,11 +216,11 @@
             this.genbtn.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.genbtn.Image = global::FundWeaverApp.Properties.Resources.icons8_Receipt_32px;
             this.genbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.genbtn.Location = new System.Drawing.Point(22, 384);
+            this.genbtn.Location = new System.Drawing.Point(22, 400);
             this.genbtn.Name = "genbtn";
             this.genbtn.Size = new System.Drawing.Size(211, 62);
             this.genbtn.TabIndex = 6;
-            this.genbtn.Text = "  Receipt Generation";
+            this.genbtn.Text = "       Payment";
             this.genbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.genbtn.UseVisualStyleBackColor = true;
             this.genbtn.Click += new System.EventHandler(this.genbtn_Click);
@@ -257,6 +258,23 @@
             this.homebtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.homebtn.UseVisualStyleBackColor = true;
             this.homebtn.Click += new System.EventHandler(this.homebtn_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(788, 14);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 63);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "          ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // label1
             // 
@@ -339,6 +357,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.MediumBlue;
+            this.panel3.Controls.Add(this.changebtn);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
@@ -375,22 +394,22 @@
             this.panelControls.Size = new System.Drawing.Size(876, 597);
             this.panelControls.TabIndex = 0;
             // 
-            // button2
+            // button3
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(22, 316);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(202, 62);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "  Church/convent";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button3.Image = global::FundWeaverApp.Properties.Resources.icons8_Receipt_32px;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(22, 468);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(211, 62);
+            this.button3.TabIndex = 11;
+            this.button3.Text = " Receipt Generation";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // FHome
             // 
@@ -453,5 +472,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

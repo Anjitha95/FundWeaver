@@ -79,7 +79,7 @@ namespace FundWeaverApp.UserControls
         {
 
             DbOperations db = new DbOperations();
-            string a = "select * from Fund where Ftype = '" + comboBox1.Text + "'";
+            string a = "select Id as Recieptnumber, Fname as Name, famount as Amount, Fdate as PaymentDate,Ftype as FundType, District from Fund where Ftype = '" + comboBox1.Text + "'";
             DataTable dt = db.ret(a);
             dataGridView1.DataSource = dt;
         }
@@ -89,41 +89,12 @@ namespace FundWeaverApp.UserControls
         
         private void button2_Click(object sender, EventArgs e)
         {
-            /*if(orgcomboBox.SelectedItem != null && namecomboBox.SelectedItem == null && districttextBox.Text == null)
-            {
-                if (orgcomboBox.Text == "Church")
-                {
-
-
-                    DbOperations db = new DbOperations();
-                    string a = "select a.*  from Fund as a inner join building as b on a.Fname = b.bldname where b.btype ='" + orgcomboBox.Text + "'";
-                    DataTable dt = db.ret(a);
-                    dataGridView1.DataSource = dt;
-
-                }
-                else if (orgcomboBox.Text == "Convent")
-                {
-
-
-                    DbOperations db = new DbOperations();
-                    string a = "select a.* from Fund as a inner join building as b on a.Fname = b.bldname where b.btype ='" + orgcomboBox.Text + "' ";
-                    DataTable dt = db.ret(a);
-                    dataGridView1.DataSource = dt;
-
-                }
-                else
-                {
-                    DbOperations db = new DbOperations();
-                    string a = "select a.* from Fund as a inner join Beneficiary as b on a.Fname = b.bname where a.District= '" + districttextBox.Text + "' ";
-                    DataTable dt = db.ret(a);
-                    dataGridView1.DataSource = dt;
-                }
-            }*/
+           
             if (orgcomboBox.SelectedItem== null && districttextBox.Text != null )   // only district search
             {
                 //MessageBox.Show("inside the look u wanted"); testing whether it enters if statement or not
                 DbOperations db = new DbOperations();
-                string a = " select * from Fund where District= '"+districttextBox.Text+"'";
+                string a = " select Id as Recieptnumber, Fname as Name, famount as Amount, Fdate as PaymentDate,Ftype as FundType, District from Fund where District= '" + districttextBox.Text+"'";
                 DataTable dt = db.ret(a);
                 dataGridView1.DataSource = dt;
             }
@@ -134,7 +105,7 @@ namespace FundWeaverApp.UserControls
 
 
                     DbOperations db = new DbOperations();
-                    string a = "select a.*  from Fund as a inner join building as b on a.Fname = b.bldname where a.District = '" + districttextBox.Text + "' and b.btype ='" + orgcomboBox.Text + "'";
+                    string a = "select a.Id as Recieptnumber, a.Fname as Name, a.famount as Amount, a.Fdate as PaymentDate, a.Ftype as FundType, a.District  from Fund as a inner join building as b on a.Fname = b.bldname where a.District = '" + districttextBox.Text + "' and b.btype ='" + orgcomboBox.Text + "'";
                     DataTable dt = db.ret(a);
                     dataGridView1.DataSource = dt;
 
@@ -144,7 +115,7 @@ namespace FundWeaverApp.UserControls
 
 
                     DbOperations db = new DbOperations();
-                    string a = "select a.* from Fund as a inner join building as b on a.Fname = b.bldname where a.District = '" + districttextBox.Text + "' and b.btype ='" + orgcomboBox.Text + "' ";
+                    string a = "select a.Id as Recieptnumber, a.Fname as Name, a.famount as Amount, a.Fdate as PaymentDate, a.Ftype as FundType, a.District from Fund as a inner join building as b on a.Fname = b.bldname where a.District = '" + districttextBox.Text + "' and b.btype ='" + orgcomboBox.Text + "' ";
                     DataTable dt = db.ret(a);
                     dataGridView1.DataSource = dt;
 
@@ -152,7 +123,7 @@ namespace FundWeaverApp.UserControls
                 else
                 {
                     DbOperations db = new DbOperations();
-                    string a = "select a.* from Fund as a inner join Beneficiary as b on a.Fname = b.bname where a.District= '" + districttextBox.Text + "' ";
+                    string a = "select a.Id as Recieptnumber, a.Fname as Name, a.famount as Amount, a.Fdate as PaymentDate, a.Ftype as FundType, a.District from Fund as a inner join Beneficiary as b on a.Fname = b.bname where a.District= '" + districttextBox.Text + "' ";
                     DataTable dt = db.ret(a);
                     dataGridView1.DataSource = dt;
                 }
@@ -164,7 +135,7 @@ namespace FundWeaverApp.UserControls
                     //MessageBox.Show("inside");
 
                     DbOperations db = new DbOperations();
-                    string a = "select a.*  from Fund as a inner join building as b on a.Fname = b.bldname where  b.btype ='" + orgcomboBox.Text + "' and b.bldname = '"+namecomboBox.Text+"'";
+                    string a = "select a.Id as Recieptnumber, a.Fname as Name, a.famount as Amount, a.Fdate as PaymentDate, a.Ftype as FundType, a.District  from Fund as a inner join building as b on a.Fname = b.bldname where  b.btype ='" + orgcomboBox.Text + "' and b.bldname = '"+namecomboBox.Text+"'";
                     DataTable dt = db.ret(a);
                     dataGridView1.DataSource = dt;
 
@@ -182,7 +153,7 @@ namespace FundWeaverApp.UserControls
                 else
                 {
                     DbOperations db = new DbOperations();
-                    string a = "select a.*  from Fund as a inner join Beneficiary as b on a.Fname = b.bname where a.Fname= '"+namecomboBox.Text+"' ";
+                    string a = "select a.Id as Recieptnumber, a.Fname as Name, a.famount as Amount, a.Fdate as PaymentDate, a.Ftype as FundType, a.District  from Fund as a inner join Beneficiary as b on a.Fname = b.bname where a.Fname= '" + namecomboBox.Text+"' ";
                     DataTable dt = db.ret(a);
                     dataGridView1.DataSource = dt;
                 }
@@ -191,7 +162,7 @@ namespace FundWeaverApp.UserControls
                 {
                     //MessageBox.Show("inside date");
                     DbOperations db = new DbOperations();
-                    string a = "select * from Fund where Fdate between  '" + dateTimePicker1.Text + "' and '" + dateTimePicker2.Text + "'";
+                    string a = "select Id as Recieptnumber, Fname as Name, famount as Amount, Fdate as PaymentDate,Ftype as FundType, District from Fund where Fdate between  '" + dateTimePicker1.Text + "' and '" + dateTimePicker2.Text + "'";
                     DataTable dt = db.ret(a);
                     dataGridView1.DataSource = dt;
                 }    

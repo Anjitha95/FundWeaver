@@ -114,6 +114,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Printhist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Printhist.Designer.cs">
+      <DependentUpon>Printhist.cs</DependentUpon>
+    </Compile>
     <Compile Include="printrc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,12 @@
     </Compile>
     <Compile Include="UserControls\FirstUc.Designer.cs">
       <DependentUpon>FirstUc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\geneoldrecp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\geneoldrecp.Designer.cs">
+      <DependentUpon>geneoldrecp.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\HistoryUc.cs">
       <SubType>UserControl</SubType>
@@ -197,6 +209,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Printhist.resx">
+      <DependentUpon>Printhist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="printrc.resx">
       <DependentUpon>printrc.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\FirstUc.resx">
       <DependentUpon>FirstUc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\geneoldrecp.resx">
+      <DependentUpon>geneoldrecp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\HistoryUc.resx">
       <DependentUpon>HistoryUc.cs</DependentUpon>

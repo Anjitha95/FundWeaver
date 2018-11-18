@@ -23,6 +23,8 @@ namespace FundWeaverApp
             PanelWidth = panelLeft.Width;
             isCollapsed = false;
             label3.Text = d;
+            
+           
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
@@ -132,9 +134,9 @@ namespace FundWeaverApp
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //changepassword
         {
-            MoveSidePanel(changebtn);
+            
             changeUC cu = new changeUC();
             AddControlsToPannel(cu);
         }
@@ -152,6 +154,28 @@ namespace FundWeaverApp
             MoveSidePanel(button2);
             updatech ud = new updatech();
             AddControlsToPannel(ud);
+        }
+
+        private void changebtn_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tooltip1 = new ToolTip();
+            tooltip1.ShowAlways = true;
+            tooltip1.SetToolTip(changebtn, "Change password");
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tooltip2 = new ToolTip();
+            tooltip2.ShowAlways = true;
+            tooltip2.SetToolTip(button1, "Logout");
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MoveSidePanel(button3);
+            geneoldrecp ge = new geneoldrecp();
+            AddControlsToPannel(ge);
         }
     }
 }

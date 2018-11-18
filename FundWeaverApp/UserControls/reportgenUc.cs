@@ -33,7 +33,7 @@ namespace FundWeaverApp.UserControls
         private void button1_Click(object sender, EventArgs e)
         {
             DbOperations db = new DbOperations();
-            string a = "select * from Fund where year(Fdate) = '"+comboBox1.Text+"' ";
+            string a = "select Id as Recieptnumber, Fname as Name, famount as Amount, Fdate as PaymentDate,Ftype as FundType, District   from Fund where year(Fdate) = '"+comboBox1.Text+"' ";
             DataTable dt = db.ret(a);
             dt.TableName = "Fund";
             dataGridView1.DataSource = dt;
@@ -58,7 +58,7 @@ namespace FundWeaverApp.UserControls
             dataGridView1.DataSource = null;
             dataGridView1.Refresh();
             DbOperations db = new DbOperations();
-            string a = "select * from Fund where year(Fdate) = '" + comboBox1.Text + "' ";
+            string a = "select Id as Recieptnumber, Fname as Name, famount as Amount, Fdate as PaymentDate,Ftype as FundType, District from Fund where year(Fdate) = '" + comboBox1.Text + "' ";
             DataTable dt = db.ret(a);
             dt.TableName = "Fund";
             dataGridView1.DataSource = dt;
