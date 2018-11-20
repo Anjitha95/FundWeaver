@@ -21,9 +21,14 @@ namespace FundWeaverApp.UserControls
         {
            
             DbOperations db = new DbOperations();
-            string a = "select * from building";
+            string a = "select bId as RegNo, bldname as Buildingname, District, btype as TypeofOrganisation, contactnumbr as Phoneno,Place from building";
             DataTable dt = db.ret(a);
             dataGridView1.DataSource = dt;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

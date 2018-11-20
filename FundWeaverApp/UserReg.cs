@@ -40,9 +40,9 @@ namespace FundWeaverApp
                 DbOperations db = new DbOperations();
                 string a = "select max(LId) from Login";
                 string b = db.maxid(a).ToString();
-                string s = "insert into Login values('" + b + "','" + UsrtextBox.Text + "','" + PasstextBox.Text + "','" + rolecomboBox.Text + "','" + emailtextBox.Text + "')";
+                string s = "insert into Login values('" + b + "','" + UsrtextBox.Text + "','" + PasstextBox.Text + "','" + rolecomboBox.Text + "','" + emailtextBox.Text + "','"+false+"')";
                 db.nonreturn(s);
-                MessageBox.Show("Registration Sucessfull......");
+                MessageBox.Show("Registration was successfull.Message will be sent to your email when the account gets activated.");
                 this.Dispose();
             }
             else

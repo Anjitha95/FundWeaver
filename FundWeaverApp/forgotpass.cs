@@ -48,10 +48,10 @@ namespace FundWeaverApp
             if (!string.IsNullOrEmpty(password))   // sending email to user for password retrival
             {
                 SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
-                MailMessage msg = new MailMessage("anjithad43@gmail.com", mailtextBox.Text.Trim());
+                MailMessage msg = new MailMessage("	fundweaverappnoreply@gmail.com", mailtextBox.Text.Trim());
                 msg.Subject = " Password Recovery ";
                 msg.Body = (" Your username is " + username + " Your password is " + password);
-                sc.Credentials = new NetworkCredential("anjithad43", "muqmapassion4836");
+                sc.Credentials = new NetworkCredential("fundweaverappnoreply", "fundweaver@275");
                 sc.EnableSsl = true;
                 sc.Send(msg);
                 MessageBox.Show("Password successfully send to mail...");

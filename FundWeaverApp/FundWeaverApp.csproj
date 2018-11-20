@@ -75,6 +75,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminForm.Designer.cs">
+      <DependentUpon>adminForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BishopF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,12 @@
     <Compile Include="UserControls\HistoryUc.Designer.cs">
       <DependentUpon>HistoryUc.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\manageruser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\manageruser.Designer.cs">
+      <DependentUpon>manageruser.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\PaymentUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -194,6 +206,9 @@
     <Compile Include="UserReg.Designer.cs">
       <DependentUpon>UserReg.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="adminForm.resx">
+      <DependentUpon>adminForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BishopF.resx">
       <DependentUpon>BishopF.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\HistoryUc.resx">
       <DependentUpon>HistoryUc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\manageruser.resx">
+      <DependentUpon>manageruser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\PaymentUC.resx">
       <DependentUpon>PaymentUC.cs</DependentUpon>

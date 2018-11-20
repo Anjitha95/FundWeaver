@@ -7,7 +7,7 @@ namespace FundWeaverApp
     public partial class Login : Form
     {
         public String utype;
-        
+        public bool approve;
 
         public Login()
         {
@@ -44,29 +44,49 @@ namespace FundWeaverApp
             string d = usrtextBox.Text;
             string s = "select *from login where username='" + d + "' and password='" + passtextBox.Text + "'";
             DataTable dt = db.ret(s);
-            if(dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0)
             {
                 utype = dt.Rows[0][3].ToString().Trim();
+                approve = (bool)dt.Rows[0][5];
                 //MessageBox.Show(utype);
-                if(utype == "FM")                                // authentication according to roles
+                if (approve == true)
                 {
-                    this.Hide();
-                    FHome fm = new FHome(d);
-                    fm.Show();
+
+
+                    if (utype == "FM")                                // authentication according to roles
+                    {
+                        this.Hide();
+                        FHome fm = new FHome(d);
+                        fm.Show();
+                    }
+                    else if (utype == "Bishop")
+                    {
+                        this.Hide();
+                        BishopF bm = new BishopF(d);
+                        bm.Show();
+                    }
+                    else
+                    {
+                        this.Hide();
+                        adminForm af = new adminForm(d);
+                        af.Show();
+                    }
+
                 }
-                else 
+                else
                 {
-                    this.Hide();
-                    BishopF bm = new BishopF(d);
-                    bm.Show();
+                    MessageBox.Show("User Account is not activated");
+                    usrtextBox.Text = "";
+                    passtextBox.Text = "";
+                   
                 }
-               
             }
             else
             {
                 MessageBox.Show("Invalid username or password!!");
                 usrtextBox.Text = "";
                 passtextBox.Text = "";
+
             }
         }
 
