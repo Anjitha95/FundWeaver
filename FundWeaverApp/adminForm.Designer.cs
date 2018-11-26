@@ -178,6 +178,7 @@
             this.newbtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.newbtn.UseVisualStyleBackColor = false;
             this.newbtn.Click += new System.EventHandler(this.newbtn_Click);
+            this.newbtn.MouseHover += new System.EventHandler(this.newbtn_MouseHover);
             // 
             // changebtn
             // 
@@ -194,6 +195,7 @@
             this.changebtn.Text = " ";
             this.changebtn.UseVisualStyleBackColor = true;
             this.changebtn.Click += new System.EventHandler(this.changebtn_Click);
+            this.changebtn.MouseHover += new System.EventHandler(this.changebtn_MouseHover);
             // 
             // button1
             // 
@@ -210,6 +212,7 @@
             this.button1.Text = "          ";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // label3
             // 

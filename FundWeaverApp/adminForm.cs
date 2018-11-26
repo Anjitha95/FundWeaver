@@ -56,5 +56,26 @@ namespace FundWeaverApp
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void newbtn_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tooltip1 = new ToolTip();
+            tooltip1.ShowAlways = true;
+            tooltip1.SetToolTip(newbtn, "Manage Users");
+        }
+
+        private void changebtn_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tooltip1 = new ToolTip();
+            tooltip1.ShowAlways = true;
+            tooltip1.SetToolTip(changebtn, "Change password");
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tooltip1 = new ToolTip();
+            tooltip1.ShowAlways = true;
+            tooltip1.SetToolTip(button1, "Logout");
+        }
     }
 }
