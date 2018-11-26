@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,25 +32,35 @@ namespace FundWeaverApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Regex rEMail =new Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
             if (UsrtextBox.Text== "" || PasstextBox.Text=="" || conptextBox.Text == "" ||rolecomboBox.Text== ""  || emailtextBox.Text == "")
             {
                 MessageBox.Show("Compulsory Fields...");
             }
-            else if (PasstextBox.Text == conptextBox.Text)
+            else if (!rEMail.IsMatch(emailtextBox.Text))
             {
-                DbOperations db = new DbOperations();
-                string a = "select max(LId) from Login";
-                string b = db.maxid(a).ToString();
-                string s = "insert into Login values('" + b + "','" + UsrtextBox.Text + "','" + PasstextBox.Text + "','" + rolecomboBox.Text + "','" + emailtextBox.Text + "','"+false+"')";
-                db.nonreturn(s);
-                MessageBox.Show("Registration was successfull.Message will be sent to your email when the account gets activated.");
-                this.Dispose();
+                MessageBox.Show("Enter valid email");
+                
+                emailtextBox.Text = "";
             }
             else
             {
-                passcontrollabel.Visible = true;
-                PasstextBox.Text = "";
-                conptextBox.Text = "";
+                if (PasstextBox.Text == conptextBox.Text)
+                {
+                    DbOperations db = new DbOperations();
+                    string a = "select max(LId) from Login";
+                    string b = db.maxid(a).ToString();
+                    string s = "insert into Login values('" + b + "','" + UsrtextBox.Text + "','" + PasstextBox.Text + "','" + rolecomboBox.Text + "','" + emailtextBox.Text + "','" + false + "')";
+                    db.nonreturn(s);
+                    MessageBox.Show("Registration was successfull.Message will be sent to your email when the account gets activated.");
+                    this.Dispose();
+                }
+                else
+                {
+                    passcontrollabel.Visible = true;
+                    PasstextBox.Text = "";
+                    conptextBox.Text = "";
+                }
             }
         }
 
