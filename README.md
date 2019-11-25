@@ -1,0 +1,3 @@
+# FundWeaver
+A management system for Diocese developed in C#
+This project is mainly based on how to categorize the fund received by the Diocese of Calicut, and enable the user to view, update, register, and generate reports of the fund received. It allows the client to manage financial expenses (received) and also to categorize their fund. The protection of data is ensured by authorised access to the database. This project eliminates the need for manual recording of fund details in the log books , enables ease of search for the fund received under certain categories and also to produce the year-end report.
